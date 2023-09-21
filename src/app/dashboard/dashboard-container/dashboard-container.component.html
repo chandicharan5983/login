@@ -1,0 +1,17 @@
+<app-header></app-header>
+<app-user-list
+  [users]="usersList"
+  (editUser)="editUser($event)"
+  (deleteUser)="deleteUser($event)"
+></app-user-list>
+
+<app-add-user
+  *ngIf="isUserDialog"
+  [mode]="mode"
+  [user]="selectedUser"
+  (close)="closeDialog()"
+  (addUser)="addNewUser($event)"
+  (updateUser)="updateUser($event)"
+></app-add-user>
+
+<button class="create-btn" (click)="isUserDialog = true">+</button>

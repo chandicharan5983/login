@@ -1,0 +1,13 @@
+<div class="popup show">
+  <div class="popup-content">
+    <h2>{{ mode === "EDIT" ? "Edit" : "Add" }} User</h2>
+    <form [formGroup]="userForm">
+      <input type="text" placeholder="First Name" formControlName="firstName" />
+      <input type="text" placeholder="Last Name" formControlName="lastName" />
+      <button class="btn" [disabled]="userForm.invalid" (click)="saveUser()">
+        {{ mode === "EDIT" ? "Update" : "Add" }}
+      </button>
+      <button class="btn" (click)="closePopup()">Cancel</button>
+    </form>
+  </div>
+</div>

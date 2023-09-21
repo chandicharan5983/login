@@ -1,0 +1,43 @@
+/* user-list.component.css */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  padding-left: 10%;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+button {
+  padding: 6px 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.img-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  height: 80vh;
+
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}

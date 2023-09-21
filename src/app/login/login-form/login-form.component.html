@@ -1,0 +1,37 @@
+<div class="container">
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit($event)">
+    <div class="input-form email">
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        (input)="isInvalidUser = false"
+        formControlName="email"
+      />
+    </div>
+    <div
+      *ngIf="
+        myForm.get('email')?.hasError('required') &&
+        myForm.get('email')?.touched
+      "
+      class="error-message"
+    >
+      Email is required
+    </div>
+    <div *ngIf="isInvalidUser" class="error-message">
+      Invalid login. Please check your username and password.
+    </div>
+
+    <div class="input-form password">
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        formControlName="password"
+        (input)="isInvalidUser = false"
+      />
+    </div>
+
+    <button type="submit" [disabled]="myForm.invalid">Log in</button>
+  </form>
+</div>
